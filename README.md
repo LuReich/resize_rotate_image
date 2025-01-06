@@ -1,3 +1,6 @@
+
+
+![flutter example](https://github.com/user-attachments/assets/ce71c09d-c54b-46aa-bc75-bb1dfa8bfc9f)
 # resize_rotate_image
 
 [![pub version](https://img.shields.io/pub/v/resize_rotate_image.svg)](https://pub.dev/packages/resize_rotate_image)
