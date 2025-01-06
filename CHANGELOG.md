@@ -5,3 +5,6 @@
 *   Includes features for resizing, rotating, and dragging images on a canvas.
 *   Provides control buttons for resetting image size and rotation, and for deleting images.
 *   Displays global and local mouse coordinates.
+
+in 0.0.4
+    now you can drag the image even the image's rotated

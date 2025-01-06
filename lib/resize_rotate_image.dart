@@ -379,10 +379,7 @@ class _EditableImageState extends State<EditableImage> {
                 return Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    if (_placedImages.isEmpty)
-                      const Center(
-                        child: Placeholder(),
-                      ),
+                    
                     ..._placedImages.asMap().entries.map((entry) {
                       final index = entry.key;
                       final placedImage = entry.value;
@@ -390,21 +387,22 @@ class _EditableImageState extends State<EditableImage> {
                       return Positioned(
                         left: placedImage.position.dx,
                         top: placedImage.position.dy,
-                        child: GestureDetector(
-                          onTap: () => _selectImage(index),
-                          onPanStart: (details) => _startDragging(index, details.globalPosition),
-                          onPanUpdate: (details) {
-                            if (_draggingIndex == index) {
-                              final RenderBox renderBox =
-                                  context.findRenderObject() as RenderBox;
-                              final Offset localPosition =
-                                  renderBox.globalToLocal(details.globalPosition);
-                              _updateImagePosition(index, localPosition);
-                            }
-                          },
-                          onPanEnd: (_) => _stopDragging(),
-                          child: Transform.rotate(
-                            angle: placedImage.rotationAngle,
+                        // GestureDetector를 Transform.rotate로 감싸서 회전 적용
+                        child: Transform.rotate(
+                          angle: placedImage.rotationAngle, // 이미지의 회전 각도 적용
+                          child: GestureDetector( // 이제 GestureDetector도 함께 회전됨
+                            onTap: () => _selectImage(index),
+                            onPanStart: (details) => _startDragging(index, details.globalPosition),
+                            onPanUpdate: (details) {
+                              if (_draggingIndex == index) {
+                                final RenderBox renderBox =
+                                    context.findRenderObject() as RenderBox;
+                                final Offset localPosition =
+                                    renderBox.globalToLocal(details.globalPosition);
+                                _updateImagePosition(index, localPosition);
+                              }
+                            },
+                            onPanEnd: (_) => _stopDragging(),
                             child: SizedBox(
                               width: placedImage.width,
                               height: placedImage.height,
@@ -421,6 +419,7 @@ class _EditableImageState extends State<EditableImage> {
                           ),
                         ),
                       );
+
                     }),
                     if (_selectedImageIndex != null && _showHandlers)
                       _buildImageHandlers(_placedImages[_selectedImageIndex!]),
