@@ -20,7 +20,7 @@ A Flutter package that allows you to easily resize, rotate, and drag images on a
     *   Set minimum and maximum size limits for resizing.
 *   **Developer-Friendly:**
     *   Displays global and local mouse coordinates for easy debugging and precise control.
-
+resize, rotate like word document's image edit
 ## Getting started
 
 To use this package, add `resize_rotate_images` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
