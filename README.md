@@ -29,3 +29,7 @@ Add `resize_rotate_image` to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   resize_rotate_image: ^1.0.0
+
+
+
+![flutter example](https://github.com/user-attachments/assets/d4267ef2-03bf-4fe2-a962-d3a8c74ab8cb)
