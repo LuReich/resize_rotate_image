@@ -1,3 +1,6 @@
+
+
+![flutter example](https://github.com/user-attachments/assets/ce71c09d-c54b-46aa-bc75-bb1dfa8bfc9f)
 # resize_rotate_image
 
 [![pub version](https://img.shields.io/pub/v/resize_rotate_image.svg)](https://pub.dev/packages/resize_rotate_image)
@@ -29,3 +32,4 @@ Add `resize_rotate_image` to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   resize_rotate_image: ^1.0.0
+
