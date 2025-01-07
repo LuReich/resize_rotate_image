@@ -31,5 +31,4 @@ Add `resize_rotate_image` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  resize_rotate_image: ^1.0.0
-
+  resize_rotate_image: ^0.0.5
